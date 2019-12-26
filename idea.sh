@@ -10,8 +10,12 @@ usage()
 }
 
 dirName="" 
-new= 
-lang= "plain"
+new=false
+lang="plain"
+if [[ "$1" == "" ]]; then 
+  usage
+  exit 1
+fi
 while [[ "$1" != "" ]]; do
 	case "$1" in
 		-o | --open) shift
@@ -28,6 +32,7 @@ while [[ "$1" != "" ]]; do
 		-h | --usage) usage
 			;;
 		 *) 	usage
+       echo "nulla"
 			exit 1
 	esac
 	shift
